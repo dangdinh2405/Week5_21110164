@@ -1,0 +1,10 @@
+$body = @{
+    id = "21110280"
+    name = "Thai Bao Quan"
+} | ConvertTo-Json
+
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+$response = Invoke-RestMethod -Uri "http://localhost:5000/21110164/21110280" -Method POST -Headers $headers -Body $body
